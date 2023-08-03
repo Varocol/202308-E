@@ -29,11 +29,7 @@ void loop()
         DBG("new_angle:%lf|%lf\n", servo1_new_angle, servo2_new_angle);
         data = "";
     }
-    if (servo1_new_angle == servo1_old_angle)
-    {
-        Servo1_Stop();
-    }
-    else
+    if (servo1_new_angle != servo1_old_angle)
     {
         Servo1_Turn(servo1_new_angle);
         if (servo1_new_angle < SERVO1_ANGLE_INITIALIZE)
@@ -46,11 +42,7 @@ void loop()
         }
         delay(delay_t);
     }
-    if (servo2_new_angle == servo2_old_angle)
-    {
-        Servo2_Stop();
-    }
-    else
+    if (servo2_new_angle != servo2_old_angle)
     {
         Servo2_Turn(servo2_new_angle);
         if (servo2_new_angle < SERVO2_ANGLE_INITIALIZE)
